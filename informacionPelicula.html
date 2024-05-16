@@ -1,0 +1,416 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Información de la Película</title>
+  <link rel="icon" href="Estilos/img/icono.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-oj/+mH0DUIc7Cvpl8h4vs0tC2qrDQQuHVT1jVBx6YeeV1CBPLwI5WYFvzfK9urirPV7V/x2ObrK3zmdHl8PQfQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
+  <link href="assets/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="Estilos/css/informacion.css"> 
+</head>
+<body>
+  <header>
+    <div class="navbar navbar-dark bg-dark shadow-sm">
+      <div class="container">
+        <a href="index.html" class="navbar-brand d-flex align-items-center">
+          <img src="Estilos/img/icono.png" width="40" height="40">
+          <strong>PelisPlus</strong>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+      <div class="row justify-content-center mt-5">
+        <div class="col-md-6">
+          <div class="card mb-3">
+            <div class="card-header">
+              Información de la Película
+            </div>
+            <div class="card-body">
+              <div class="text-center mb-3">
+                <img src="" alt="Imagen de la película" id="peliculaImagen" class="img-fluid" width="60%" height="150">
+              </div>
+              <h3 class="card-title text-center" id="peliculaTitulo"></h3>
+              <p class="card-text">Género: <span id="peliculaGenero"></span></p>
+              <p class="card-text">Fecha de Estreno: <span id="peliculaFechaEstreno"></span></p>
+              <p class="card-text">Duración: <span id="peliculaDuracion"></span></p>
+              <p class="card-text">Calificación: <span id="peliculaCalificacion"></span></p>
+              <p class="card-text">Sinopsis: <span id="peliculaSinopsis"></span></p>
+              <div class="actor-container">
+                <div class="actor-name" id="peliculaActor1"></div>
+                <div class="character-name" id="peliculaPersonaje1"></div>
+                <img src="" alt="Imagen actor 1" class="actor-image" id="peliculaImagenActor1" width="100%" height="150">
+              </div>
+              <div class="actor-container">
+                <div class="actor-name" id="peliculaActor2"></div>
+                <div class="character-name" id="peliculaPersonaje2"></div>
+                <img src="" alt="Imagen actor 2" class="actor-image" id="peliculaImagenActor2" width="100%" height="150">
+              </div>
+              <div class="actor-container">
+                <div class="actor-name" id="peliculaActor3"></div>
+                <div class="character-name" id="peliculaPersonaje3"></div>
+                <img src="" alt="Imagen actor 3" class="actor-image" id="peliculaImagenActor3" width="100%" height="150">
+              </div>
+              <div class="actor-container">
+                <div class="actor-name" id="peliculaActor4"></div>
+                <div class="character-name" id="peliculaPersonaje4"></div>
+                <img src="" alt="Imagen actor 4" class="actor-image" id="peliculaImagenActor4" width="100%" height="150">
+              </div>
+              <div class="actor-container">
+                <div class="actor-name" id="peliculaActor5"></div>
+                <div class="character-name" id="peliculaPersonaje5"></div>
+                <img src="" alt="Imagen actor 5" class="actor-image" id="peliculaImagenActor5" width="100%" height="150">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="text-body-secondary py-5 text-center bg-dark">
+    <div class="container text-white">
+      <p class="mb-1">© 2024. Sitio elaborado por Paula Murcia</p>
+    </div>
+  </footer>
+
+  <script>
+    var peliculas = {
+      "Madame Web": {
+        "imagen": "Estilos/img/madame-web.jpg",
+        "fechaEstreno": "14-02-2024",
+        "duracion": "1h 56m",
+        "genero": "Acción/Ciencia ficción",
+        "sinopsis": "Cassandra Webb es una paramédica en Manhattan que podría tener habilidades clarividentes. Obligada a enfrentarse a sucesos que se han revelado de su pasado, crea una relación con tres jóvenes destinadas a tener un futuro poderoso... si consiguen sobrevivir a un presente mortal. ",
+        "calificacion": "3.0",
+        "nombreActor1": "Dakota Johnson",
+        "personaje1": "Cassandra Webb",
+        "imagenActor1": "Estilos/img/DakotaJohnson.jpg",
+        "nombreActor2": "Sydney Sweeney",
+        "personaje2": "Julia Cornwall",
+        "imagenActor2": "Estilos/img/SydneySweeney.jpg",
+        "nombreActor3": "Isabela Merced",
+        "personaje3": "Anya Corazon",
+        "imagenActor3": "Estilos/img/IsabelaCorazon.jpg",
+        "nombreActor4": "Emma Roberts",
+        "personaje4": "Mary Parker",
+        "imagenActor4": "Estilos/img/EmmaRoberts.jpg",
+        "nombreActor5": "Tahar Rahim",
+        "personaje5": "Ezekiel Sims",
+        "imagenActor5": "Estilos/img/TaharSims.jpg",
+        "imagenFondo": "1h 56m"
+      },
+      "Con todos menos contigo": {
+        "imagen": "Estilos/img/menos-contigo.jpg",
+        "fechaEstreno": "22-12-2023",
+        "duracion": "1h 44m",
+        "genero": "Comedia/Romance",
+        "sinopsis": "Bea y Ben, antiguos compañeros de universidad cuya mutua atracción inicial se tornó asco, se encuentran inesperadamente juntos en una boda en Australia y fingen ser la pareja perfecta para mantener las apariencias.",
+        "calificacion": "3.1",
+        "nombreActor1": "Sydney Sweeney",
+        "personaje1": "Bea",
+        "imagenActor1": "Estilos/img/SydneySweeney.jpg",
+        "nombreActor2": "Glen Powell",
+        "personaje2": "Ben",
+        "imagenActor2": "Estilos/img/GlenPowell.jpg",
+        "nombreActor3": "Darren Barnet",
+        "personaje3": "Jonathan",
+        "imagenActor3": "Estilos/img/DarrenBarnet.jpg",
+        "nombreActor4": "Charlee Fraser",
+        "personaje4": "Margaret",
+        "imagenActor4": "Estilos/img/CharleeFraser.jpg",
+        "nombreActor5": "Alexandra Shipp",
+        "personaje5": "Claudia",
+        "imagenActor5": "Estilos/img/AlexandraShipp.jpg",
+        "imagenFondo": "1h 56m"
+      },
+      "Ghostbusters": {
+        "imagen": "Estilos/img/cazafantasmas.jpg",
+        "fechaEstreno": "11-04-2024",
+        "duracion": "1h 56m",
+        "genero": "Comedia/Fantasía",
+        "sinopsis": "La familia Spengler regresa a la famosa estación de bomberos de la ciudad de Nueva York con los cazafantasmas originales. Cuando un antiguo artefacto desata una fuerza maligna, los cazafantasmas nuevos y antiguos deben unirse para proteger el mundo.",
+        "calificacion": "2.9",
+        "nombreActor1": "Mckenna Grace",
+        "personaje1": "Phoebe Spengler",
+        "imagenActor1": "Estilos/img/MckennaGrace.jpg",
+        "nombreActor2": "Emily Alyn Lind",
+        "personaje2": "Melody",
+        "imagenActor2": "Estilos/img/EmilyAlynLind.jpg",
+        "nombreActor3": "Finn Wolfhard",
+        "personaje3": "Trevor",
+        "imagenActor3": "Estilos/img/FinnWolfhard.jpg",
+        "nombreActor4": "Bill Murray",
+        "personaje4": "Peter Veckman",
+        "imagenActor4": "Estilos/img/BillMuray.jpg",
+        "nombreActor5": "Paul Rudd",
+        "personaje5": "Mr. Grooberson",
+        "imagenActor5": "Estilos/img/PaulRudd.jpg",
+        "imagenFondo": "1h 56m"
+      },
+      "Duna: Parte dos": {
+        "imagen": "Estilos/img/dune.jpg",
+        "fechaEstreno": "25-02-2024",
+        "duracion": "2h 46m",
+        "genero": "Ciencia ficción/Aventura",
+        "sinopsis": "Paul Atreides se une a Chani y a los Fremen mientras busca venganza contra los conspiradores que destruyeron a su familia. Paul se enfrenta a una elección entre el amor de su vida y el destino del universo, y debe evitar un futuro terrible.",
+        "calificacion": "4.3",
+        "nombreActor1": "Austin Butler",
+        "personaje1": "Feyd-Rautha",
+        "imagenActor1": "Estilos/img/AustinButler.jpg",
+        "nombreActor2": "Timothée Chalamet",
+        "personaje2": "Paul Atreides",
+        "imagenActor2": "Estilos/img/TimotheeChalamet.jpg",
+        "nombreActor3": "Zendaya",
+        "personaje3": "Chani",
+        "imagenActor3": "Estilos/img/zendaya.jpg",
+        "nombreActor4": "Florence Pugh",
+        "personaje4": "Irulan Corrino",
+        "imagenActor4": "Estilos/img/FlorencePugh.jpg",
+        "nombreActor5": "Léa Setdoux",
+        "personaje5": "Lady Margot",
+        "imagenActor5": "Estilos/img/LeaSetdoux.jpg",
+        "imagenFondo": "1h 56m"
+      },
+      "The Flash": {
+        "imagen": "Estilos/img/flash.png",
+        "fechaEstreno": "16-06-2023",
+        "duracion": "2h 24m",
+        "genero": "Acción/Fantasía",
+        "sinopsis": "Flash viaja a través del tiempo para evitar el asesinato de su madre, pero, sin saberlo, provoca una serie de cambios que originan la creación de un multiverso.",
+        "calificacion": "3.4",
+        "nombreActor1": "Ezra Miller",
+        "personaje1": "Barry Allen",
+        "imagenActor1": "Estilos/img/EzraMiller.jpg",
+        "nombreActor2": "Michael Keaton",
+        "personaje2": "Batman",
+        "imagenActor2": "Estilos/img/MichaelKeaton.jpg",
+        "nombreActor3": "Sasha Calle",
+        "personaje3": "Supergirl",
+        "imagenActor3": "Estilos/img/SashaCalle.jpg",
+        "nombreActor4": "Kiersey Clemons",
+        "personaje4": "Iris West",
+        "imagenActor4": "Estilos/img/KierseyClemons.jpg",
+        "nombreActor5": "Maribel Verdú",
+        "personaje5": "Nora Allen",
+        "imagenActor5": "Estilos/img/MaribelVerdu.jpg",
+        "imagenFondo": "1h 56m"
+      },
+      "La primera profecía": {
+        "imagen": "Estilos/img/profesia.jpg",
+        "fechaEstreno": "04-04-2024",
+        "duracion": "1h 57m",
+        "genero": "Terror/Suspenso",
+        "sinopsis": "Cuando una joven estadounidense es enviada a Roma para comenzar una vida de servicio a la Iglesia, se encuentra con una oscuridad que la lleva a cuestionar su propia fe y descubre una conspiración aterradora que espera provocar el nacimiento de la encarnación del mal.",
+        "calificacion": "3.0",
+        "nombreActor1": "Nell Tiger Free",
+        "personaje1": "Margaret Daino",
+        "imagenActor1": "Estilos/img/NellTigerFree.jpg",
+        "nombreActor2": "Sonia Braga",
+        "personaje2": "Sister Silvia",
+        "imagenActor2": "Estilos/img/SoniaBraga.jpg",
+        "nombreActor3": "Ralph Ineson",
+        "personaje3": "Father Brennan",
+        "imagenActor3": "Estilos/img/RalphIneson.jpg",
+        "nombreActor4": "Bill Nighy",
+        "personaje4": "Lawrence",
+        "imagenActor4": "Estilos/img/BillNighy.jpg",
+        "nombreActor5": "Andrea Arcangeli",
+        "personaje5": "Paolo",
+        "imagenActor5": "Estilos/img/AndreaArcangeli.jpg",
+        "imagenFondo": ""
+      },
+      "Oppenheimer": {
+        "imagen": "Estilos/img/oppenheimer.jpg",
+        "fechaEstreno": "21-07-2023",
+        "duracion": "3h",
+        "genero": "Suspenso",
+        "sinopsis": "Durante la Segunda Guerra Mundial, el teniente general Leslie Groves designa al físico J. Robert Oppenheimer para un grupo de trabajo que está desarrollando el Proyecto Manhattan, cuyo objetivo consiste en fabricar la primera bomba atómica.",
+        "calificacion": "4.3",
+        "nombreActor1": "Cillian Murphy",
+        "personaje1": "J. Robert Oppenheimer",
+        "imagenActor1": "Estilos/img/CillianMurphy.jpg",
+        "nombreActor2": "Florence Pugh",
+        "personaje2": "Jean Tatlock",
+        "imagenActor2": "Estilos/img/FlorencePugh.jpg",
+        "nombreActor3": "Robert Downey Jr.",
+        "personaje3": "Lewis Strauss",
+        "imagenActor3": "Estilos/img/RobertDowney.jpg",
+        "nombreActor4": "Emily Blunt",
+        "personaje4": "Kitty Oppenheimer",
+        "imagenActor4": "Estilos/img/EmilyBlunt.jpg",
+        "nombreActor5": "Josh Hartnett",
+        "personaje5": "Ernest Lawrence",
+        "imagenActor5": "Estilos/img/JoshHartnett.jpg",
+        "imagenFondo": ""
+      },
+      "Barbie": {
+        "imagen": "Estilos/img/barbie.jpg",
+        "fechaEstreno": "21-07-2023",
+        "duracion": "1h 54m",
+        "genero": "Comedia/Fantasía",
+        "sinopsis": "Después de ser expulsada de Barbieland por no ser una muñeca de aspecto perfecto, Barbie parte hacia el mundo humano para encontrar la verdadera felicidad.",
+        "calificacion": "3.1",
+        "nombreActor1": "Margot Robbie",
+        "personaje1": "Barbie",
+        "imagenActor1": "Estilos/img/MargotRobbie.jpg",
+        "nombreActor2": "Ryan Gosling",
+        "personaje2": "Ken",
+        "imagenActor2": "Estilos/img/RyanGosling.jpg",
+        "nombreActor3": "Emma Mackey",
+        "personaje3": "Physicist Barbie",
+        "imagenActor3": "Estilos/img/EmmaMackey.jpg",
+        "nombreActor4": "Will Ferrell",
+        "personaje4": "Mattel CEO",
+        "imagenActor4": "Estilos/img/WillFerrell.jpg",
+        "nombreActor5": "America Ferrera",
+        "personaje5": "Gloria",
+        "imagenActor5": "Estilos/img/AmericaFerrera.jpg",
+        "imagenFondo": "1h 56m"
+      },
+      "Pobres Criaturas": {
+        "imagen": "Estilos/img/criaturas.jpg",
+        "fechaEstreno": "08-12-2023",
+        "duracion": "2h 21m",
+        "genero": "Comedia/Ciencia ficción",
+        "sinopsis": "El Dr. Godwin resucita a la joven Bella Baxter para que aprenda a su lado. Sin embargo, ella huye en compañía de un abogado en una aventura relámpago a través de los continentes. Libre de los prejuicios de su época, se mantiene firme en su propósito de defender la igualdad y la liberación.",
+        "calificacion": "3.5",
+        "nombreActor1": "Emma Stone",
+        "personaje1": "Bella Baxter",
+        "imagenActor1": "Estilos/img/EmmaStone.jpg",
+        "nombreActor2": "Mark Ruffalo",
+        "personaje2": "Duncan Wedderburn",
+        "imagenActor2": "Estilos/img/MarkRuffalo.jpg",
+        "nombreActor3": "Willem Dafoe",
+        "personaje3": "Dr. Godwin Baxter",
+        "imagenActor3": "Estilos/img/WillemDafoe.jpg",
+        "nombreActor4": "Sarah Qualley",
+        "personaje4": "Felicity",
+        "imagenActor4": "Estilos/img/SarahQualley.jpg",
+        "nombreActor5": "Ramy Youssef",
+        "personaje5": "Max McCandless",
+        "imagenActor5": "Estilos/img/RamyYoussef.jpg",
+        "imagenFondo": "1h 56m"
+      },
+      "Inmaculate": {
+        "imagen": "Estilos/img/inmaculada.jpg",
+        "fechaEstreno": "22-03-2024",
+        "duracion": "1h 29m",
+        "genero": "Terror",
+        "sinopsis": "Cecilia, una mujer de fe devota, recibe una cálida bienvenida a la perfecta campiña italiana, donde le ofrecen un nuevo puesto en un ilustre convento. Pero Cecilia se da cuenta de que su nuevo hogar esconde oscuros y horripilantes secretos.",
+        "calificacion": "3.1",
+        "nombreActor1": "Sydney Sweeney",
+        "personaje1": "Cecilia",
+        "imagenActor1": "Estilos/img/SydneySweeney.jpg",
+        "nombreActor2": "Benedetta Porcaroli",
+        "personaje2": "Sister Gwen",
+        "imagenActor2": "Estilos/img/BenedettaPorcaroli.jpg",
+        "nombreActor3": "Álvaro Morte",
+        "personaje3": "Father Sal Tedeschi",
+        "imagenActor3": "Estilos/img/AlvaroMorte.jpg",
+        "nombreActor4": "Simona Tabasco",
+        "personaje4": "Sister Mary",
+        "imagenActor4": "Estilos/img/SimonaTabasco.jpg",
+        "nombreActor5": "Dora Romano",
+        "personaje5": "Mother Superior",
+        "imagenActor5": "Estilos/img/DoraRomano.jpg",
+        "imagenFondo": "1h 56m"
+      },
+      "Rápidos y furiosos 10": {
+        "imagen": "Estilos/img/fastx.jpg",
+        "fechaEstreno": "19-05-2023",
+        "duracion": "2h 21m",
+        "genero": "Acción",
+        "sinopsis": "Dom Toretto y sus familias se enfrentan al peor enemigo imaginable, uno llegado desde el pasado con sed de venganza, dispuesto a cualquier cosa con tal de destruir todo aquello que Dom ama.",
+        "calificacion": "3.6",
+        "nombreActor1": "Vin Diesel",
+        "personaje1": "Dominic Toretto",
+        "imagenActor1": "Estilos/img/VinDiesel.jpg",
+        "nombreActor2": "Jason Momoa",
+        "personaje2": "Dante Reyes",
+        "imagenActor2": "Estilos/img/JasonMomoa.jpg",
+        "nombreActor3": "Alan Ritchson",
+        "personaje3": "Aimes",
+        "imagenActor3": "Estilos/img/AlanRitchson.jpg",
+        "nombreActor4": "Rita Moreno",
+        "personaje4": "Abuelita Toretto",
+        "imagenActor4": "Estilos/img/RitaMoreno.jpg",
+        "nombreActor5": "Michelle Rodriguez",
+        "personaje5": "Letty",
+        "imagenActor5": "Estilos/img/MichelleRodriguez.jpg",
+        "imagenFondo": "1h 56m"
+      },
+      "Damsel": {
+        "imagen": "Estilos/img/damsel.jpg",
+        "fechaEstreno": "08-03-2024",
+        "duracion": "1h 50m",
+        "genero": "Acción/Aventura",
+        "sinopsis": "Una joven acepta casarse con un apuesto príncipe, pero descubre que todo es una trampa. Es arrojada a una cueva con un dragón que escupe fuego y debe confiar únicamente en su ingenio y voluntad para sobrevivir.",
+        "calificacion": "3.4",
+        "nombreActor1": "Millie Bobby Brown",
+        "personaje1": "Princess Elodie",
+        "imagenActor1": "Estilos/img/MillieBobbyBrown.jpg",
+        "nombreActor2": "Nick Robinson",
+        "personaje2": "Prince Henry",
+        "imagenActor2": "Estilos/img/NickRobinson.jpg",
+        "nombreActor3": "Shohreh Aghdashloo",
+        "personaje3": "Dragon",
+        "imagenActor3": "Estilos/img/ShohrehAghdashloo.jpg",
+        "nombreActor4": "Angela Bassett",
+        "personaje4": "Lady Bayford",
+        "imagenActor4": "Estilos/img/AngelaBassett.jpg",
+        "nombreActor5": "Robin Wright",
+        "personaje5": "Queen Isabelle",
+        "imagenActor5": "Estilos/img/RobinWright.jpg",
+        "imagenFondo": "1h 56m"
+      }
+    };
+
+    function getParameterByName(name, url) {
+      if (!url) url = window.location.href;
+      name = name.replace(/[\[\]]/g, "\\$&");
+      var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+          results = regex.exec(url);
+      if (!results) return null;
+      if (!results[2]) return '';
+      return decodeURIComponent(results[2].replace(/\+/g, " "));
+    }
+
+    var peliculaNombre = getParameterByName('pelicula');
+
+    if (peliculas.hasOwnProperty(peliculaNombre)) {
+      var pelicula = peliculas[peliculaNombre];
+      document.getElementById('peliculaImagen').src = pelicula.imagen;
+      document.getElementById('peliculaTitulo').textContent = peliculaNombre;
+      document.getElementById('peliculaGenero').textContent = pelicula.genero;
+      document.getElementById('peliculaCalificacion').textContent = pelicula.calificacion;
+      document.getElementById('peliculaSinopsis').textContent = pelicula.sinopsis;
+      document.getElementById('peliculaActor1').textContent = pelicula.nombreActor1;
+      document.getElementById('peliculaPersonaje1').textContent = pelicula.personaje1;
+      document.getElementById('peliculaImagenActor1').src = pelicula.imagenActor1;
+      document.getElementById('peliculaActor2').textContent = pelicula.nombreActor2;
+      document.getElementById('peliculaPersonaje2').textContent = pelicula.personaje2;
+      document.getElementById('peliculaImagenActor2').src = pelicula.imagenActor2;
+      document.getElementById('peliculaActor3').textContent = pelicula.nombreActor3;
+      document.getElementById('peliculaPersonaje3').textContent = pelicula.personaje3;
+      document.getElementById('peliculaImagenActor3').src = pelicula.imagenActor3;
+      document.getElementById('peliculaActor4').textContent = pelicula.nombreActor4;
+      document.getElementById('peliculaPersonaje4').textContent = pelicula.personaje4;
+      document.getElementById('peliculaImagenActor4').src = pelicula.imagenActor4;
+      document.getElementById('peliculaActor5').textContent = pelicula.nombreActor5;
+      document.getElementById('peliculaPersonaje5').textContent = pelicula.personaje5;
+      document.getElementById('peliculaImagenActor5').src = pelicula.imagenActor5;
+      document.getElementById('peliculaFechaEstreno').textContent = pelicula.fechaEstreno;
+      document.getElementById('peliculaDuracion').textContent = pelicula.duracion;
+    } else {
+      document.getElementById('peliculaTitulo').textContent = "Película no encontrada";
+    }
+
+  </script>
+
+</body>
+</html>

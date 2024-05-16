@@ -1,0 +1,32 @@
+.actor-container {
+    display: inline-block;
+    margin-right: 20px;
+    vertical-align: top;
+}
+
+.actor-name {
+    font-weight: bold;
+}
+
+.character-name {
+    font-size: 0.9em;
+    margin-bottom: 5px;
+}
+
+.actor-image {
+    display: block;
+    max-width: 100px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+  }
+  
+.container{
+    max-width: 1480px;
+}
+
+.card-header{
+    font-weight: bolder;
+    font-size: 27px;
+    text-align: center;
+}

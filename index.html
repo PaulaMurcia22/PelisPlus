@@ -1,0 +1,332 @@
+<!doctype html>
+<html lang="en" data-bs-theme="auto">
+<head>
+  <script src="assets/js/color-modes.js"></script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PelisPlus</title>
+  <link rel="icon" href="Estilos/img/icono.png">
+  <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/album/">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-oj/+mH0DUIc7Cvpl8h4vs0tC2qrDQQuHVT1jVBx6YeeV1CBPLwI5WYFvzfK9urirPV7V/x2ObrK3zmdHl8PQfQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
+  <link href="assets/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="Estilos/css/index.css"> 
+</head>
+<body> 
+  <header>
+    <div class="navbar navbar-dark bg-dark shadow-sm">
+      <div class="container">
+        <a href="index.html" class="navbar-brand d-flex align-items-center">
+          <img src="Estilos/img/icono.png" width="40" height="40">
+          <strong>PelisPlus</strong>
+        </a>
+        <form class="d-flex">
+          <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search">
+          <button class="btn btn-outline-light" type="submit">Buscar</button>
+        </form>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="album py-5">
+      <div class="container">
+        <form class="mb-3">
+          <button type="button" class="btn btn-primary mt-3" id="filterButton">
+            <i class="fas fa-filter"></i> Filtrar
+          </button>
+          <div id="filterOptions" class="filter-container" style="display: none;">
+            <div class="row">
+              <div class="col-md-2">
+                <label for="genreSelect" class="form-label">Género</label>
+                <select class="form-select" id="genreSelect">
+                  <option value="" selected disabled>Seleccione</option>
+                  <option value="comedia">Comedia</option>
+                  <option value="accion">Acción</option>
+                  <option value="fantasia">Fantasía</option>
+                  <option value="ciencia-ficcion">Ciencia ficción</option>
+                  <option value="suspenso">Suspenso</option>
+                  <option value="terror">Terror</option>
+                  <option value="romance">Romance</option>
+                  <option value="aventura">Aventura</option>
+                </select>
+              </div>
+              <div class="col-md-2">
+                <label for="dateSelect" class="form-label">Fecha de estreno</label>
+                <select class="form-select" id="dateSelect">
+                  <option value="" selected disabled>Seleccione</option>
+                  <option value="reciente">Más reciente primero</option>
+                  <option value="antigua">Más antigua primero</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </form>        
+        
+  
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-3">
+            <div class="col pelicula accion ciencia-ficcion" data-fecha="2024-02-14" data-img="Estilos/img/madame-web.jpg">
+              <div class="card shadow-sm">
+                <img src="Estilos/img/madame-web.jpg" width=100% height="425">
+                <div class="card-body">
+                  <h5 class="card-title">Madame Web</h5>
+                  <p class="card-text">Género: Acción/Ciencia ficción<br>
+                    Duración: 1h 56m<br>
+                    Fecha de estreno: 14-02-2024 <br>
+                    Calificación: 3.0
+                  </p>
+                  <button type="button" class="btn btn-sm btn-outline-secondary ver-mas" data-pelicula="Madame Web">Ver más información</button>
+                </div>
+              </div>
+            </div>
+            <div class="col pelicula comedia romance" data-fecha="2023-12-22" data-img="Estilos/img/menos-contigo.jpg">
+              <div class="card shadow-sm">
+                <img src="Estilos/img/menos-contigo.jpg" width=100% height="425">
+                <div class="card-body">
+                  <h5 class="card-title">Con todos menos contigo</h5>
+                  <p class="card-text">Género: Comedia/Romance<br>
+                    Duración: 1h 44m<br>
+                    Fecha de estreno: 22-12-2023 <br>
+                    Calificación: 3.1
+                  </p>
+                  <button type="button" class="btn btn-sm btn-outline-secondary ver-mas" data-pelicula="Con todos menos contigo">Ver más información</button>
+                </div>
+              </div>
+            </div>
+            <div class="col pelicula comedia fantasia" data-fecha="2024-04-11" data-img="Estilos/img/cazafantasmas.jpg">
+              <div class="card shadow-sm">
+                <img src="Estilos/img/cazafantasmas.jpg" width=100% height="425">
+                <div class="card-body">
+                  <h5 class="card-title">Ghostbusters</h5>
+                  <p class="card-text">Género: Comedia/Fantasía<br>
+                    Duración: 1h 56m<br>
+                    Fecha de estreno: 11-04-2024 <br>
+                    Calificación: 2.9
+                  </p>
+                  <button type="button" class="btn btn-sm btn-outline-secondary ver-mas" data-pelicula="Ghostbusters">Ver más información</button>
+                </div>
+              </div>
+            </div>
+  
+            <div class="col pelicula ciencia-ficcion aventura" data-fecha="2024-02-25" data-img="Estilos/img/dune.jpg">
+              <div class="card shadow-sm">
+                <img src="Estilos/img/dune.jpg" width=100% height="425">
+                <div class="card-body">
+                  <h5 class="card-title">Duna: Parte dos</h5>
+                  <p class="card-text">Género: Ciencia ficción/Aventura<br>
+                    Duración: 2h 46m<br>
+                    Fecha de estreno: 25-02-2024 <br>
+                    Calificación: 4.3
+                  </p>
+                  <button type="button" class="btn btn-sm btn-outline-secondary ver-mas" data-pelicula="Duna: Parte dos">Ver más información</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="col pelicula accion fantasia" data-fecha="2023-06-16" data-img="Estilos/img/flash.png">
+              <div class="card shadow-sm">
+                <img src="Estilos/img/flash.png" width=100% height="425">
+                <div class="card-body">
+                  <h5 class="card-title">The Flash</h5>
+                  <p class="card-text">Género: Acción/Fantasía<br>
+                    Duración: 2h 24m<br>
+                    Fecha de estreno: 16-06-2023 <br>
+                    Calificación: 3.4
+                  </p>
+                  <button type="button" class="btn btn-sm btn-outline-secondary  ver-mas" data-pelicula="The Flash">Ver más información</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="col pelicula terror suspenso" data-fecha="2024-04-04" data-img="Estilos/img/profesia.jpg">
+              <div class="card shadow-sm">
+                <img src="Estilos/img/profesia.jpg" width=100% height="425">
+                <div class="card-body">
+                  <h5 class="card-title">La primera profecía</h5>
+                  <p class="card-text">Género: Terror/Suspenso<br>
+                    Duración: 1h 57m<br>
+                    Fecha de estreno: 04-04-2024 <br>
+                    Calificación: 3.0
+                  </p>
+                  <button type="button" class="btn btn-sm btn-outline-secondary ver-mas" data-pelicula="La primera profecía">Ver más información</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="col pelicula suspenso" data-fecha="2023-07-21" data-img="Estilos/img/oppenheimer.jpg">
+              <div class="card shadow-sm">
+                <img src="Estilos/img/oppenheimer.jpg" width=100% height="425">
+                <div class="card-body">
+                  <h5 class="card-title">Oppenheimer</h5>
+                  <p class="card-text">Género: Suspenso<br>
+                    Duración: 3h<br>
+                    Fecha de estreno: 21-07-2023 <br>
+                    Calificación: 4.3
+                  </p>
+                  <button type="button" class="btn btn-sm btn-outline-secondary ver-mas" data-pelicula="Oppenheimer">Ver más información</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="col pelicula comedia fantasia " data-fecha="2023-07-21" data-img="Estilos/img/barbie.jpg">
+              <div class="card shadow-sm">
+                <img src="Estilos/img/barbie.jpg" width=100% height="425">
+                <div class="card-body">
+                  <h5 class="card-title">Barbie</h5>
+                  <p class="card-text">Género: Comedia/Fantasía<br>
+                    Duración: 1h 54m<br>
+                    Fecha de estreno: 21-07-2023 <br>
+                    Calificación: 3.1
+                  </p>
+                  <button type="button" class="btn btn-sm btn-outline-secondary ver-mas" data-pelicula="Barbie">Ver más información</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="col pelicula comedia ciencia-ficcion" data-fecha="2023-12-08" data-img="Estilos/img/criaturas.jpg">
+              <div class="card shadow-sm">
+                <img src="Estilos/img/criaturas.jpg" width=100% height="425">
+                <div class="card-body">
+                  <h5 class="card-title">Pobres Criaturas</h5>
+                  <p class="card-text">Género: Comedia/Ciencia ficción<br>
+                    Duración: 2h 21m<br>
+                    Fecha de estreno: 08-12-2023 <br>
+                    Calificación: 3.5
+                  </p>
+                  <button type="button" class="btn btn-sm btn-outline-secondary ver-mas" data-pelicula="Pobres Criaturas">Ver más información</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="col pelicula terror" data-fecha="2024-03-22" data-img="Estilos/img/inmaculada.jpg">
+              <div class="card shadow-sm">
+                <img src="Estilos/img/inmaculada.jpg" width=100% height="425">
+                <div class="card-body">
+                  <h5 class="card-title">Inmaculate</h5>
+                  <p class="card-text">Género: Terror<br>
+                    Duración: 1h 29m<br>
+                    Fecha de estreno: 22-03-2024 <br>
+                    Calificación: 3.1
+                  </p>
+                  <button type="button" class="btn btn-sm btn-outline-secondary ver-mas" data-pelicula="Inmaculate">Ver más información</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="col pelicula accion" data-fecha="2023-05-19" data-img="Estilos/img/fastx.jpg">
+              <div class="card shadow-sm">
+                <img src="Estilos/img/fastx.jpg" width=100% height="425">
+                <div class="card-body">
+                  <h5 class="card-title">Rápidos y furiosos 10</h5>
+                  <p class="card-text">Género: Acción<br>
+                    Duración: 2h 21m<br>
+                    Fecha de estreno: 19-05-2023 <br>
+                    Calificación: 3.6
+                  </p>
+                  <button type="button" class="btn btn-sm btn-outline-secondary ver-mas" data-pelicula="Rápidos y furiosos 10">Ver más información</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="col pelicula accion aventura" data-fecha="2024-03-08" data-img="Estilos/img/damsel.jpg">
+              <div class="card shadow-sm">
+                <img src="Estilos/img/damsel.jpg" width=100% height="425">
+                <div class="card-body">
+                  <h5 class="card-title">Damsel</h5>
+                  <p class="card-text">Género: Acción/Aventura<br>
+                    Duración: 1h 50m<br>
+                    Fecha de estreno: 08-03-2024 <br>
+                    Calificación: 3.4
+                  </p>
+                  <button type="button" class="btn btn-sm btn-outline-secondary ver-mas" data-pelicula="Damsel">Ver más información</button>
+                </div>
+              </div>
+            </div>
+        </div>
+      </div>
+    </div>
+  </main>
+  
+
+  <footer class="text-body-secondary py-5 text-center bg-dark">
+    <div class="container text-white">
+      <p class="mb-1">© 2024. Sitio elaborado por Paula Murcia</p>
+    </div>
+  </footer>
+  <script src="assets/dist/js/bootstrap.bundle.min.js"></script>
+  
+  <script>
+    document.getElementById('genreSelect').addEventListener('change', function() {
+      var genre = this.value.toLowerCase(); 
+      var peliculas = document.querySelectorAll('.pelicula');
+
+      peliculas.forEach(function(pelicula) {
+          if (pelicula.classList.contains(genre)) {
+              pelicula.style.display = 'block';
+          } else {
+              pelicula.style.display = 'none'; 
+          }
+      });
+    });
+
+    document.getElementById('dateSelect').addEventListener('change', function() {
+      var order = this.value;
+      var peliculasContainer = document.querySelector('.row-cols-1');
+      var peliculas = Array.from(peliculasContainer.children);
+
+      peliculas.sort(function(a, b) {
+          var fechaA = new Date(a.dataset.fecha);
+          var fechaB = new Date(b.dataset.fecha);
+
+          if (order === 'reciente') {
+              return fechaB - fechaA;
+          } else if (order === 'antigua') {
+              return fechaA - fechaB;
+          }
+      });
+
+      peliculas.forEach(function(pelicula) {
+          peliculasContainer.appendChild(pelicula);
+      });
+    });
+
+
+    document.getElementById('filterButton').addEventListener('click', function() {
+      var filterOptions = document.getElementById('filterOptions');
+      if (filterOptions.style.display === 'none') {
+        filterOptions.style.display = 'block';
+        document.getElementById('filterButton').style.display = 'none';
+      } else {
+        filterOptions.style.display = 'none';
+      }
+    });
+
+    var botonesVerMas = document.querySelectorAll('.ver-mas');
+    botonesVerMas.forEach(function(boton) {
+      boton.addEventListener('click', function() {
+        var peliculaNombre = this.dataset.pelicula;
+        var imagenURL = this.parentElement.parentElement.querySelector('img').src;
+        window.location.href = 'informacionPelicula.html?pelicula=' + encodeURIComponent(peliculaNombre) + '&imagen=' + encodeURIComponent(imagenURL);
+      });
+    });
+
+    document.querySelector('.form-control').addEventListener('input', function() {
+      var searchText = this.value.trim().toLowerCase();
+
+      var peliculas = document.querySelectorAll('.pelicula');
+
+      peliculas.forEach(function(pelicula) {
+        var titulo = pelicula.querySelector('.card-title').textContent.toLowerCase();
+        
+        if (titulo.includes(searchText)) {
+          pelicula.style.display = 'block';
+        } else {
+          pelicula.style.display = 'none';
+        }
+      });
+    });
+  </script>
+
+
+</body>
+</html>
